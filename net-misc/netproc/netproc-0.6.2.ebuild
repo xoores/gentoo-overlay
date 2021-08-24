@@ -1,4 +1,4 @@
-# Maintainer: Xoores <me@xoores.cz>
+# Maintainer: Xoores <gentoo@xoores.cz>
 
 EAPI=7
 

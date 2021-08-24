@@ -1,5 +1,5 @@
 # Ghidra ebuild (binary version)
-# Maintainer: Xoores <me@xoores.cz>
+# Maintainer: Xoores <gentoo@xoores.cz>
 EAPI=7
 
 # For some reason NSA likes to "stamp" releases with build date. That's
