@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+    <mime-type type="application/x-eddx">
+        <comment>EdrawMax project</comment>
+        <icon name="application-x-eddx"/>
+        <glob pattern="*.eddx"/>
+  </mime-type>
+</mime-info>
