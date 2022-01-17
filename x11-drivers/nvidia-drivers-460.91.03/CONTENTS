@@ -1,0 +1,271 @@
+dir /lib
+dir /lib/modules
+dir /lib/modules/5.10.52-gentoo
+dir /lib/modules/5.10.52-gentoo/video
+obj /lib/modules/5.10.52-gentoo/video/nvidia.ko f13c7bb52e73f70c0e9efd5e15393962 1629405753
+obj /lib/modules/5.10.52-gentoo/video/nvidia-drm.ko 80347c812edd8e494474937262ebb87e 1629405753
+obj /lib/modules/5.10.52-gentoo/video/nvidia-modeset.ko fe0ae44afa3ac9f95bb3fc0c585117f1 1629405753
+obj /lib/modules/5.10.52-gentoo/video/nvidia-uvm.ko 7d682f28ce4019cab87f5ad215b49c5b 1629405753
+dir /lib/systemd
+dir /lib/systemd/system
+obj /lib/systemd/system/nvidia-persistenced.service 8720b1b043304d741b14ca72f50129cd 1629405755
+obj /lib/systemd/system/nvidia-hibernate.service 08561440c5c3f48b31f8197b78be1b11 1629405757
+obj /lib/systemd/system/nvidia-resume.service b056c6d1f3aa6ebd004f5d2a077108e4 1629405757
+obj /lib/systemd/system/nvidia-suspend.service 4196c19c36cf84b50f1e6b7b5b94a2a5 1629405757
+dir /lib/systemd/system-sleep
+obj /lib/systemd/system-sleep/nvidia 063bc395c06d2c516ad09d8663e49466 1629405757
+dir /etc
+dir /etc/modprobe.d
+obj /etc/modprobe.d/nvidia.conf 51059bedd6ba7b9a548a03130ab63716 1629405760
+dir /etc/OpenCL
+dir /etc/OpenCL/vendors
+obj /etc/OpenCL/vendors/nvidia.icd 9d950bb477202d049cf31f84621a7f47 1629405754
+dir /etc/nvidia
+obj /etc/nvidia/nvidia-application-profiles-rc feab4906deeff4c5993bced244e73f4d 1629405754
+dir /etc/conf.d
+obj /etc/conf.d/nvidia-persistenced cafd61968ca5a9bb44a38640c06e3067 1629405755
+dir /etc/init.d
+obj /etc/init.d/nvidia-persistenced 18ddd13dc5c0269124a83d826b556728 1629405755
+dir /etc/X11
+dir /etc/X11/xinit
+dir /etc/X11/xinit/xinitrc.d
+obj /etc/X11/xinit/xinitrc.d/95-nvidia-settings 7ebc5172ec52435c2bf6a67c26b33ea0 1629405755
+dir /usr
+dir /usr/share
+dir /usr/share/nvidia
+obj /usr/share/nvidia/nvidia-application-profiles-key-documentation 6c8a680194657e96647a53d39315302a 1629405755
+dir /usr/share/X11
+dir /usr/share/X11/xorg.conf.d
+obj /usr/share/X11/xorg.conf.d/50-nvidia-drm-outputclass.conf 4829219735f613807095cb0df90ccba4 1629405754
+dir /usr/share/vulkan
+dir /usr/share/vulkan/icd.d
+obj /usr/share/vulkan/icd.d/nvidia_icd.json bcf2128caa8eab28443fa6940e66ebf3 1629405754
+dir /usr/share/vulkan/implicit_layer.d
+obj /usr/share/vulkan/implicit_layer.d/nvidia_layers.json c82ba74321fcf62782bcf8cac9f27a6b 1629405754
+dir /usr/share/glvnd
+dir /usr/share/glvnd/egl_vendor.d
+obj /usr/share/glvnd/egl_vendor.d/10_nvidia.json 14ef5723d2133ebeb70e53403d5d121e 1629405754
+dir /usr/share/man
+dir /usr/share/man/man1
+obj /usr/share/man/man1/nvidia-persistenced.1.bz2 cbb601a7cead7c8eb32fead027b3c272 1629405754
+obj /usr/share/man/man1/nvidia-modprobe.1.bz2 a7b1116f431c128bea8895037e4024cc 1629405754
+obj /usr/share/man/man1/nvidia-settings.1.bz2 3b1d956360cb11318e885cc0929c786e 1629405755
+obj /usr/share/man/man1/nvidia-xconfig.1.bz2 9ecb53db39d38029ba68af08190941de 1629405755
+obj /usr/share/man/man1/nvidia-cuda-mps-control.1.bz2 8f54c43e7657ac561c1eacb35a3bc449 1629405756
+obj /usr/share/man/man1/nvidia-smi.1.bz2 744fdfc4cc7325f0f36b600099233a51 1629405756
+dir /usr/share/pixmaps
+obj /usr/share/pixmaps/nvidia-settings.png d2778903cebfbd0ba07ed17bfaaf5e59 1629405755
+dir /usr/share/applications
+obj /usr/share/applications/nvidia-settings.desktop 003ed632e2e1edd3abcc243dc80274b0 1629405755
+dir /usr/share/doc
+dir /usr/share/doc/nvidia-drivers-460.91.03
+dir /usr/share/doc/nvidia-drivers-460.91.03/html
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/xconfigoptions.html 07b32be2d8a981013c6f62fb34c29539 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/appendices.html c5d6f0969ab13e5f5750694f29fdbe49 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/dma_issues.html 1eca33614f3828a8189d4ee52b4e2177 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/sli.html 53ca139805813b877e8ab13c0ba63666 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/nvidia-smi.html f48c8db51a04d2c88a1beb7f4f855d87 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/optimus.html 9ce56c0889a41e9ffa2d7809c83db270 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/nvidia-ml.html 24b981d2a3e203832105f3b9c9ee6ed7 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/randr14.html 48b31f0cce8eac31344d7ef63215c507 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/dynamicpowermanagement.html 7b9573eeb9493c17c98937778b502ac0 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/editxconfig.html 067ab67eb75b294f3a4267413d53e5d0 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/depth30.html 5bb20af45b140658376fd7587f7be6d5 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/faq.html cd8bc1d05caef8105b18a2e12eca9302 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/commonproblems.html 38b9a16853d70e955ca80e33a4c534d8 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/installdriver.html a0e2b2bdebd09150d6259d5440d691ea 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/knownissues.html c98924039d8dfe569b1869868e9bdbd5 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/vdpausupport.html cc36519dd826b4ac7e6a468f9beade85 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/installedcomponents.html d8ed9f9814c8b6f298f9f1ac2b072a89 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/nvidiasettings.html 987b1bddaf936e43d4b269d0208e824c 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/acknowledgements.html e007719db6d5e4a7c10524995141d9ad 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/configmultxscreens.html 97fe3840127abb314c6a66822d1c1af8 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/minimumrequirements.html a0816f049e00921973136855190a1949 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/xcompositeextension.html 51332fec603e133c600c0cc6fabd7bfa 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/procinterface.html 072ee48c8e86e7e78bb60c41dd943bfe 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/framelock.html f7a210065b554414c8a33f8774039a71 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/programmingmodes.html e88d1b95d86549f2f93c40faa211675f 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/i2c.html 08dafd4668184f8058ad1d19c1d26aca 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/glxsupport.html de6980302e636fae50f6ecfd6c7ec0a9 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/openglenvvariables.html 175f70f74519b631b24c761f5ab80254 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/index.html c942e5e13436a69700a957cd0e04fb57 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/addressingcapabilities.html 555ee71236c5b7a8691e5287d08ec816 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/nvidia-debugdump.html ad4fe976c4fde2ad30a02026d9f777a1 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/audiosupport.html 73bb78ab30d3d1ad58be53d5c00f3a3c 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/flippingubb.html 52c4c12ddc93cbde806ef9c615640f88 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/selectdriver.html 6529553b1c6a0b68d820333b0f4daf39 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/displaydevicenames.html b2581f4d77f6aafc7acec46c96db6c75 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/retpoline.html cc9ce05085d8660eb1069983f4434b24 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/introduction.html ae8fe366f4a3de69f991d4521b53fa9b 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/configtwinview.html 89d65cc7542e4b0326a8cf5d0dfee7bb 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/dpi.html e01130b271e39cd978c17ffe04a35d76 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/addtlresources.html d8357448763d79a89159831064f33bac 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/configlaptop.html 0381af7002b1c372001697c6b658acdf 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/egpu.html 105c6bd38c27108368dd359d30cd3d09 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/supportedchips.html 9511c1c896817b16e18c9c4b15db4b8f 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/gpunames.html 587b6162c5a6808b49a281feb71b91a6 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/kms.html 118fd2e7b62451b0dd463c0d2bda1a9f 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/installationandconfiguration.html 1e7b2705e9b212cb6d09c5065a0f487b 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/newusertips.html eb08b66926204798f8b9b396abe10f77 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/powermanagement.html 4fbcbfe6e8ddc9a4bd9198642714d635 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/profiles.html 0f6f033d46f9fbe72f8b3d5c6824b050 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/ngx.html 350b77f654ed357e425a0146a61ab41e 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/primerenderoffload.html 10f8e98e4f137d6d2cf9e71ca609abf4 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/nvidia-persistenced.html e0605abfbe1f74d814ed2d593b015600 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/xineramaglx.html e5da09d33dd9012dfcd79fa0a4359d8a 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/html/xrandrextension.html 7f29de067efa46e87df3190303bc5c2a 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/README.txt.bz2 170030724c0f89f8a6b6e7d667fe8995 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/README.gentoo.bz2 3ffdc4c5d7464d25b87fb2f381a5a6fd 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/FRAMELOCK.txt.bz2 768c129d4ce73c47acc4850c87489d71 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/NV-CONTROL-API.txt.bz2 28b0cca8b6d403c39dc6d56120b94f46 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/NVIDIA_Changelog.bz2 72358e1cc854bd1fcbc9a30652974af8 1629405758
+obj /usr/share/doc/nvidia-drivers-460.91.03/supported-gpus.json.bz2 b52b891c72de51cec8214aded206d01b 1629405758
+dir /usr/lib64
+dir /usr/lib64/xorg
+dir /usr/lib64/xorg/modules
+dir /usr/lib64/xorg/modules/drivers
+obj /usr/lib64/xorg/modules/drivers/nvidia_drv.so be2a23954cac341fb53bd99e7758a2ba 1629405753
+dir /usr/lib64/xorg/modules/extensions
+obj /usr/lib64/xorg/modules/extensions/libglxserver_nvidia.so 15ebbfcc4bb226d08c32862e897922e5 1629405754
+obj /usr/lib64/libnvidia-gtk3.so.460.91.03 4d25efbb4e63124d6ac5eb2a7380857a 1629405755
+obj /usr/lib64/libEGL_nvidia.so.460.91.03 e56d60d7f738b3e92a3054ab6a6534a3 1629405756
+obj /usr/lib64/libGLESv1_CM_nvidia.so.460.91.03 3cf759434b823097ac31720ac3bea300 1629405756
+obj /usr/lib64/libGLESv2_nvidia.so.460.91.03 294c9c067ea5c2b82b54040c2be75770 1629405756
+obj /usr/lib64/libcuda.so.460.91.03 73dc7828e54aab17953e0115e47a41f7 1629405757
+obj /usr/lib64/libnvcuvid.so.460.91.03 412c62c190be2d6897312ed6637ed494 1629405757
+obj /usr/lib64/libnvidia-allocator.so.460.91.03 09d0cbd0935a1be2f399e1b49b9fb5f5 1629405757
+obj /usr/lib64/libnvidia-eglcore.so.460.91.03 a6d4edb167915b050604b71c69eb7893 1629405757
+obj /usr/lib64/libnvidia-encode.so.460.91.03 5c60ede668772ec45ace670f67714ad4 1629405757
+obj /usr/lib64/libnvidia-glcore.so.460.91.03 55c56128968446cc4762d903e6707c48 1629405757
+obj /usr/lib64/libnvidia-glsi.so.460.91.03 b10933e52f8470ebf209fcb9c5767345 1629405757
+obj /usr/lib64/libnvidia-glvkspirv.so.460.91.03 9967d1f7882190098c22169ab066f58d 1629405757
+obj /usr/lib64/libnvidia-ml.so.460.91.03 fa9e3afd2f3fcb9c32b689f30df98c3c 1629405757
+obj /usr/lib64/libnvidia-opencl.so.460.91.03 fbf74608f18f73bb60e5b0931c7d5ae5 1629405757
+obj /usr/lib64/libnvidia-opticalflow.so.460.91.03 0f4c513f66dbc23da5c818977f3e6b10 1629405757
+obj /usr/lib64/libnvidia-ptxjitcompiler.so.460.91.03 f3913a79b7b4cf212697f41006458af4 1629405757
+obj /usr/lib64/libnvidia-tls.so.460.91.03 fa401bd3a921ab36718df699477251b0 1629405757
+obj /usr/lib64/libnvidia-compiler.so.460.91.03 50c5c0ea9ad12d0914a01e489d6cadcb 1629405757
+obj /usr/lib64/libGLX_nvidia.so.460.91.03 0e8dd402863747d61aef84cc7cb31e9e 1629405757
+obj /usr/lib64/libvdpau_nvidia.so.460.91.03 31a1279bd72f1cfd99b50120b7325bca 1629405757
+obj /usr/lib64/libnvidia-fbc.so.460.91.03 eeffc49551cb4bc47a81dfea53cee084 1629405757
+obj /usr/lib64/libnvidia-ifr.so.460.91.03 7a90097b0c4977942f8a4277722b60d9 1629405757
+obj /usr/lib64/libnvidia-cbl.so.460.91.03 2a25a1ca57a05c63c8e11147aef2b577 1629405757
+obj /usr/lib64/libnvidia-cfg.so.460.91.03 6f09b5ed9f157dd596e3281252aea037 1629405757
+obj /usr/lib64/libnvidia-rtcore.so.460.91.03 15ab3ffbf050bd1fdfa980bffe1105ed 1629405757
+obj /usr/lib64/libnvoptix.so.460.91.03 f11b43d7e8e9069e9b26eecf5bf534cc 1629405757
+obj /usr/lib64/libnvidia-ngx.so.460.91.03 c2ec52161a574cbc6751d4e405da10f0 1629405757
+dir /usr/bin
+obj /usr/bin/nvidia-modprobe 4ebf788c9deee3a7b8abd4f68d923522 1629405754
+obj /usr/bin/nvidia-persistenced 0bff3390280139b466448e134baa9271 1629405754
+obj /usr/bin/nvidia-xconfig ef767baf48a23517dbe4b21a40ab14d5 1629405755
+obj /usr/bin/nvidia-settings b403a2125a9e13c9c3c6c3faf4a6b213 1629405755
+obj /usr/bin/nvidia-bug-report.sh 6524047211369e79eaa7851f94238a49 1629405756
+obj /usr/bin/nvidia-sleep.sh 4962968e60c517f3a31e03b39ad359f5 1629405757
+dir /usr/lib
+obj /usr/lib/libEGL_nvidia.so.460.91.03 afb9304d6deb9ab0c0a2c209acf801c6 1629405756
+obj /usr/lib/libGLESv1_CM_nvidia.so.460.91.03 62a99ec3dbdedc4b7d9542a7e82a0eb7 1629405756
+obj /usr/lib/libGLESv2_nvidia.so.460.91.03 c1c7cb76789cc6c37373c35deb67dd0a 1629405756
+obj /usr/lib/libcuda.so.460.91.03 ffdf4dcdd47c95e2ebbe47b645f8c7a9 1629405756
+obj /usr/lib/libnvcuvid.so.460.91.03 710faa8a740dffd29fc089a6a5090147 1629405756
+obj /usr/lib/libnvidia-allocator.so.460.91.03 0d21507f01b2e42673eb87379fe13565 1629405756
+obj /usr/lib/libnvidia-eglcore.so.460.91.03 a96e3ca78dc92a1daf9fc4c20c4fcb3f 1629405756
+obj /usr/lib/libnvidia-encode.so.460.91.03 35a92f1cb60ad1a7772d1d3695388416 1629405756
+obj /usr/lib/libnvidia-glcore.so.460.91.03 61f7ca350b3b6bf92548aea15ca7cae0 1629405756
+obj /usr/lib/libnvidia-glsi.so.460.91.03 3820625fe31dafe1ac6c94882c134e49 1629405756
+obj /usr/lib/libnvidia-glvkspirv.so.460.91.03 db8d2b95f50e4f7acfa1e87325350611 1629405756
+obj /usr/lib/libnvidia-ml.so.460.91.03 a26e7898ee717a556358d9eee065fc8d 1629405756
+obj /usr/lib/libnvidia-opencl.so.460.91.03 7ae20f892e54ab6ca4b567ce767e5f39 1629405756
+obj /usr/lib/libnvidia-opticalflow.so.460.91.03 f2b9581c743af07488664a0ae136db8e 1629405756
+obj /usr/lib/libnvidia-ptxjitcompiler.so.460.91.03 7d5c177463c38e4df8b3b6c18c9f8bc0 1629405756
+obj /usr/lib/libnvidia-tls.so.460.91.03 104bf4d60911d6f2986ae5df97e8bc71 1629405756
+obj /usr/lib/libnvidia-compiler.so.460.91.03 4a619ce46619d085a2283e228d480981 1629405756
+obj /usr/lib/libGLX_nvidia.so.460.91.03 36accb978ac416680458d0a7dddda045 1629405756
+obj /usr/lib/libvdpau_nvidia.so.460.91.03 ec0524e332587b9b659d4dc783da876e 1629405756
+obj /usr/lib/libnvidia-fbc.so.460.91.03 c010a63d53536e72735f9e44ed413c15 1629405756
+obj /usr/lib/libnvidia-ifr.so.460.91.03 8346117b959f064ae53b72e42032e233 1629405756
+dir /opt
+dir /opt/bin
+obj /opt/bin/nvidia-cuda-mps-control 158ff8c845ecd1dbe40e2e4cbf4bfee7 1629405756
+obj /opt/bin/nvidia-cuda-mps-server f4bfc5eb0e90436026722896a4c91ad3 1629405756
+obj /opt/bin/nvidia-debugdump 654b16c621ca17c5325753d0e30c7579 1629405756
+obj /opt/bin/nvidia-smi e1e2ebb6384acbdb768d1a77c2f3e6aa 1629405756
+sym /usr/lib/libnvidia-ifr.so.1 -> libnvidia-ifr.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-ifr.so -> libnvidia-ifr.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-fbc.so.1 -> libnvidia-fbc.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-fbc.so -> libnvidia-fbc.so.460.91.03 1629405756
+sym /usr/lib/libvdpau_nvidia.so.1 -> libvdpau_nvidia.so.460.91.03 1629405756
+sym /usr/lib/libvdpau_nvidia.so -> libvdpau_nvidia.so.460.91.03 1629405756
+sym /usr/lib/libGLX_nvidia.so.0 -> libGLX_nvidia.so.460.91.03 1629405756
+sym /usr/lib/libGLX_nvidia.so -> libGLX_nvidia.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-compiler.so -> libnvidia-compiler.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-tls.so -> libnvidia-tls.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-ptxjitcompiler.so.1 -> libnvidia-ptxjitcompiler.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-ptxjitcompiler.so -> libnvidia-ptxjitcompiler.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-opticalflow.so.1 -> libnvidia-opticalflow.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-opticalflow.so -> libnvidia-opticalflow.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-opencl.so.1 -> libnvidia-opencl.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-opencl.so -> libnvidia-opencl.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-ml.so.1 -> libnvidia-ml.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-ml.so -> libnvidia-ml.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-glvkspirv.so -> libnvidia-glvkspirv.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-glsi.so -> libnvidia-glsi.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-glcore.so -> libnvidia-glcore.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-encode.so.1 -> libnvidia-encode.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-encode.so -> libnvidia-encode.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-eglcore.so -> libnvidia-eglcore.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-allocator.so.1 -> libnvidia-allocator.so.460.91.03 1629405756
+sym /usr/lib/libnvidia-allocator.so -> libnvidia-allocator.so.460.91.03 1629405756
+sym /usr/lib/libnvcuvid.so.1 -> libnvcuvid.so.460.91.03 1629405756
+sym /usr/lib/libnvcuvid.so -> libnvcuvid.so.460.91.03 1629405756
+sym /usr/lib/libcuda.so.1 -> libcuda.so.460.91.03 1629405756
+sym /usr/lib/libcuda.so -> libcuda.so.460.91.03 1629405756
+sym /usr/lib/libGLESv2_nvidia.so.2 -> libGLESv2_nvidia.so.460.91.03 1629405756
+sym /usr/lib/libGLESv2_nvidia.so -> libGLESv2_nvidia.so.460.91.03 1629405756
+sym /usr/lib/libGLESv1_CM_nvidia.so.1 -> libGLESv1_CM_nvidia.so.460.91.03 1629405756
+sym /usr/lib/libGLESv1_CM_nvidia.so -> libGLESv1_CM_nvidia.so.460.91.03 1629405756
+sym /usr/lib/libEGL_nvidia.so.0 -> libEGL_nvidia.so.460.91.03 1629405756
+sym /usr/lib/libEGL_nvidia.so -> libEGL_nvidia.so.460.91.03 1629405756
+sym /usr/lib64/libnvidia-ngx.so.1 -> libnvidia-ngx.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-ngx.so -> libnvidia-ngx.so.460.91.03 1629405757
+sym /usr/lib64/libnvoptix.so.1 -> libnvoptix.so.460.91.03 1629405757
+sym /usr/lib64/libnvoptix.so -> libnvoptix.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-rtcore.so -> libnvidia-rtcore.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-cfg.so.1 -> libnvidia-cfg.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-cfg.so -> libnvidia-cfg.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-cbl.so -> libnvidia-cbl.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-ifr.so.1 -> libnvidia-ifr.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-ifr.so -> libnvidia-ifr.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-fbc.so.1 -> libnvidia-fbc.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-fbc.so -> libnvidia-fbc.so.460.91.03 1629405757
+sym /usr/lib64/libvdpau_nvidia.so.1 -> libvdpau_nvidia.so.460.91.03 1629405757
+sym /usr/lib64/libvdpau_nvidia.so -> libvdpau_nvidia.so.460.91.03 1629405757
+sym /usr/lib64/libGLX_nvidia.so.0 -> libGLX_nvidia.so.460.91.03 1629405757
+sym /usr/lib64/libGLX_nvidia.so -> libGLX_nvidia.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-compiler.so -> libnvidia-compiler.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-tls.so -> libnvidia-tls.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-ptxjitcompiler.so.1 -> libnvidia-ptxjitcompiler.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-ptxjitcompiler.so -> libnvidia-ptxjitcompiler.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-opticalflow.so.1 -> libnvidia-opticalflow.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-opticalflow.so -> libnvidia-opticalflow.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-opencl.so.1 -> libnvidia-opencl.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-opencl.so -> libnvidia-opencl.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-ml.so.1 -> libnvidia-ml.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-ml.so -> libnvidia-ml.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-glvkspirv.so -> libnvidia-glvkspirv.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-glsi.so -> libnvidia-glsi.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-glcore.so -> libnvidia-glcore.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-encode.so.1 -> libnvidia-encode.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-encode.so -> libnvidia-encode.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-eglcore.so -> libnvidia-eglcore.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-allocator.so.1 -> libnvidia-allocator.so.460.91.03 1629405757
+sym /usr/lib64/libnvidia-allocator.so -> libnvidia-allocator.so.460.91.03 1629405757
+sym /usr/lib64/libnvcuvid.so.1 -> libnvcuvid.so.460.91.03 1629405757
+sym /usr/lib64/libnvcuvid.so -> libnvcuvid.so.460.91.03 1629405757
+sym /usr/lib64/libcuda.so.1 -> libcuda.so.460.91.03 1629405757
+sym /usr/lib64/libcuda.so -> libcuda.so.460.91.03 1629405757
+sym /usr/lib64/libGLESv2_nvidia.so.2 -> libGLESv2_nvidia.so.460.91.03 1629405756
+sym /usr/lib64/libGLESv2_nvidia.so -> libGLESv2_nvidia.so.460.91.03 1629405756
+sym /usr/lib64/libGLESv1_CM_nvidia.so.1 -> libGLESv1_CM_nvidia.so.460.91.03 1629405756
+sym /usr/lib64/libGLESv1_CM_nvidia.so -> libGLESv1_CM_nvidia.so.460.91.03 1629405756
+sym /usr/lib64/libEGL_nvidia.so.0 -> libEGL_nvidia.so.460.91.03 1629405756
+sym /usr/lib64/libEGL_nvidia.so -> libEGL_nvidia.so.460.91.03 1629405756
