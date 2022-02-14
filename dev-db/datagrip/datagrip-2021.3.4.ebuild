@@ -5,11 +5,11 @@ EAPI=7
 
 inherit desktop readme.gentoo-r1 wrapper xdg-utils
 
-DESCRIPTION="Intelligent Python IDE with unique code assistance and analysis"
-HOMEPAGE="https://www.jetbrains.com/pycharm/"
-SRC_URI="https://download.jetbrains.com/python/${P}.tar.gz"
+DESCRIPTION="Database IDE that is tailored to suit the specific needs of professional SQL developers"
+HOMEPAGE="https://www.jetbrains.com/datagrip/"
+SRC_URI="https://download.jetbrains.com/${PN}/${P}.tar.gz"
 
-LICENSE="|| ( PyCharm_Academic PyCharm_Classroom PyCharm PyCharm_OpenSource PyCharm_Preview )"
+LICENSE="|| ( IDEA IDEA_Academic IDEA_Classroom IDEA_OpenSource IDEA_Personal )"
 SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE="+bundled-jdk"
@@ -55,8 +55,8 @@ RESTRICT="mirror"
 
 QA_PREBUILT="opt/${P}/*"
 
-MY_PN=${PN/-professional/}
-S="${WORKDIR}/${MY_PN}-${PV}"
+#MY_PN=${PN/-professional/}
+S="${WORKDIR}/DataGrip-${PV}"
 
 src_prepare() {
 	default
@@ -99,20 +99,20 @@ src_install() {
 		rm -r "${JRE_DIR}" || die
 	fi
 
-	fperms 755 "${DIR}"/bin/{format.sh,inspect.sh,ltedit.sh,pycharm.sh,printenv.py,restart.py}
+	fperms 755 "${DIR}"/bin/{format.sh,inspect.sh,ltedit.sh,datagrip.sh,printenv.py,restart.py}
 
 	fperms 755 "${DIR}"/"${JRE_DIR}"/bin/{jaotc,java,javac,jcmd,jdb,jfr,jhsdb,jjs,jmap,jps,jrunscript,jstack,jstat,keytool,pack200,rmid,rmiregistry,serialver,unpack200}
 	fperms 755 "${DIR}"/"${JRE_DIR}"/lib/{chrome-sandbox,jcef_helper,jexec,jspawnhelper}
 
-	make_wrapper "${PN}" "${DIR}/bin/pycharm.sh"
-	newicon bin/${MY_PN}.png ${PN}.png
+	make_wrapper "${PN}" "${DIR}/bin/datagrip.sh"
+	newicon bin/${PN}.png ${PN}.png
 	make_desktop_entry ${PN} ${PN} ${PN}
 
-	readme.gentoo_create_doc
+	#readme.gentoo_create_doc
 
 	# recommended by: https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit
-	dodir /etc/sysctl.d/
-	echo "fs.inotify.max_user_watches = 524288" > "${D}/etc/sysctl.d/30-idea-inotify-watches.conf" || die
+	#dodir /etc/sysctl.d/
+	#echo "fs.inotify.max_user_watches = 524288" > "${D}/etc/sysctl.d/30-idea-inotify-watches.conf" || die
 }
 
 pkg_postinst() {
