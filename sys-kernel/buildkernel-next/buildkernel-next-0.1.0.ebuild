@@ -18,6 +18,7 @@ SLOT="0"
 DEPEND="
 	sys-kernel/dracut
 	sys-boot/efibootmgr
+	app-crypt/sbsigntools
 	app-arch/cpio
 	sys-apps/util-linux"
 RDEPEND="${DEPEND}"
