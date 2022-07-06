@@ -22,7 +22,7 @@ else
 	KEYWORDS="~amd64 ~arm ~x86"
 fi
 
-IUSE="+audio +alsa +analog +digital channels doc dtv examples fec +filter grc jack modtool oss performance-counters portaudio +qt5 sdl test trellis uhd vocoder +utils wavelet zeromq"
+IUSE="+audio +alsa +analog +digital channels doc dtv examples fec +filter grc jack modtool +network oss performance-counters portaudio +qt5 sdl test trellis uhd vocoder +utils wavelet zeromq"
 
 #RESTRICT="!test? ( test )"
 #Tests are known broken right now
@@ -136,6 +136,7 @@ src_configure() {
 		-DENABLE_GR_BLOCKS=ON
 		-DENABLE_GR_FFT=ON
 		-DENABLE_GR_AUDIO=ON
+		-DENABLE_GR_NETWORK="$(usex network)"
 		-DENABLE_GR_ANALOG="$(usex analog)"
 		-DENABLE_GR_CHANNELS="$(usex channels)"
 		-DENABLE_GR_DIGITAL="$(usex digital)"
