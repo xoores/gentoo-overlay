@@ -18,7 +18,7 @@ SLOT="0"
 DEPEND="
 	dev-lang/python
 	dev-python/pycryptodome
-	dev-python/async_timeout
+	dev-python/async-timeout
 	dev-python/beautifulsoup4
 	dev-python/lxml
 	dev-python/rsa"
