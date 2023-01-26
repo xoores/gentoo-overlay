@@ -13,6 +13,7 @@ SRC_URI="https://mango-lychee.nyc3.digitaloceanspaces.com/LycheeSlicer-${PVR}.de
 
 KEYWORDS="~amd64"
 
+# I honestly have no idea what the license is :-( Sorry...
 LICENSE="GPL-3+"
 SLOT="0"
 
