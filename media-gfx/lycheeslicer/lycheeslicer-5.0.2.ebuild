@@ -70,13 +70,12 @@ RDEPEND="
 	x11-libs/pixman"
 
 DEPEND="${RDEPEND}"
-
-
+S="${WORKDIR}"
 
 src_unpack() {
 	unpack ${P}.deb
 	unpack ./data.tar.xz
-	mkdir "${S}"
+	#mkdir "${S}"
 }
 
 src_install() {
@@ -87,6 +86,10 @@ src_install() {
 	
 	insinto "/usr/share/applications"
 	doins -r "${WORKDIR}/usr/share/applications"
+	
+	for F in chrome-sandbox chrome_crashpad_handler lycheeslicer; do
+		fperms 755 "/opt/LycheeSlicer/${F}" 
+	done
 	
 	dosym "/opt/LycheeSlicer/lycheeslicer" "/usr/bin/lycheeslicer"
 }
