@@ -75,17 +75,16 @@ S="${WORKDIR}"
 src_unpack() {
 	unpack ${P}.deb
 	unpack ./data.tar.xz
-	#mkdir "${S}"
 }
 
 src_install() {
-	doins -r "${WORKDIR}/opt"
+	doins -r "opt"
 	
 	insinto "/usr/share/icons"
-	doins -r "${WORKDIR}/usr/share/icons"
+	doins -r "usr/share/icons"
 	
 	insinto "/usr/share/applications"
-	doins -r "${WORKDIR}/usr/share/applications"
+	doins -r "usr/share/applications"
 	
 	for F in chrome-sandbox chrome_crashpad_handler lycheeslicer; do
 		fperms 755 "/opt/LycheeSlicer/${F}" 
