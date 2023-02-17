@@ -7,6 +7,7 @@ PYTHON_COMPAT=( python3_{8..10} )
 
 DESCRIPTION="Tool created for effortless and automated connection to CheckPoint's SNX VPN."
 HOMEPAGE="https://gitlab.com/Xoores/snxwrapper"
+RESTRICT="bindist mirror"
 
 SRC_URI="https://gitlab.com/Xoores/snxwrapper/-/archive/${PV}/${P}.tar.gz"
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc64 ~x86"
