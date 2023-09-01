@@ -14,6 +14,7 @@ EGIT_BRANCH="master"
 RESTRICT="mirror"
 LICENSE="COPYING"
 SLOT="0"
+KEYWORDS="**"
 
 
 DEPEND=">=dev-qt/qtcharts-5"

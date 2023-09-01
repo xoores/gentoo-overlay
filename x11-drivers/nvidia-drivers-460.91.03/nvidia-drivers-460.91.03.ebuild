@@ -1,7 +1,7 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 MODULES_OPTIONAL_USE="driver"
 inherit desktop linux-info linux-mod multilib-build optfeature \

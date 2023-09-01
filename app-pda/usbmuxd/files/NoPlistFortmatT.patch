@@ -1,0 +1,55 @@
+diff --color -u a/src/utils.h b/src/utils.h
+--- a/src/utils.h	2020-03-19 19:59:46.000000000 +0100
++++ b/src/utils.h	2023-07-29 16:00:56.373553755 +0200
+@@ -78,10 +78,12 @@
+ int buffer_read_from_filename(const char *filename, char **buffer, uint64_t *length);
+ int buffer_write_to_filename(const char *filename, const char *buffer, uint64_t length);
+ 
++/*
+ enum plist_format_t {
+ 	PLIST_FORMAT_XML,
+ 	PLIST_FORMAT_BINARY
+ };
++*/
+ 
+ int plist_read_from_filename(plist_t *plist, const char *filename);
+ int plist_write_to_filename(plist_t plist, const char *filename, enum plist_format_t format);
+ 
+diff --color -u a/src/conf.c b/src/conf.c
+--- a/src/conf.c	2020-06-09 03:57:16.000000000 +0200
++++ b/src/conf.c	2023-07-29 16:41:13.987378222 +0200
+@@ -254,7 +254,8 @@
+ 		usbmuxd_log(LL_DEBUG, "Setting key %s in config file %s", key, config_file);
+ 	}
+ 
+-	int res = plist_write_to_filename(config, config_file, PLIST_FORMAT_XML);
++    plist_format_t f = PLIST_FORMAT_XML;
++	int res = plist_write_to_filename(config, config_file, f);
+ 
+ 	plist_free(config);
+ 
+diff --color -u a/src/utils.c b/src/utils.c
+--- a/src/utils.c	2020-03-19 19:59:46.000000000 +0100
++++ b/src/utils.c	2023-07-29 16:42:35.920382222 +0200
+@@ -302,7 +302,7 @@
+ 	return 1;
+ }
+ 
+-int plist_write_to_filename(plist_t plist, const char *filename, enum plist_format_t format)
++int plist_write_to_filename(plist_t plist, const char *filename, plist_format_t format)
+ {
+ 	char *buffer = NULL;
+ 	uint32_t length;
+
+diff --color -u a/src/utils.h b/src/utils.h
+--- a/src/utils.h	2023-07-29 16:43:58.807386270 +0200
++++ b/src/utils.h	2023-07-29 16:43:01.089383451 +0200
+@@ -86,7 +86,7 @@
+ */
+ 
+ int plist_read_from_filename(plist_t *plist, const char *filename);
+-int plist_write_to_filename(plist_t plist, const char *filename, enum plist_format_t format);
++int plist_write_to_filename(plist_t plist, const char *filename, plist_format_t format);
+ 
+ uint64_t mstime64(void);
+ void get_tick_count(struct timeval * tv);

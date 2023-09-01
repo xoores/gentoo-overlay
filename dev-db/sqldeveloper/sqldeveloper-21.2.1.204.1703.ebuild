@@ -7,7 +7,7 @@
 # Maintainer: Xoores <gentoo@xoores.cz>
 
 
-EAPI=7
+EAPI=8
 
 inherit desktop java-pkg-2
 

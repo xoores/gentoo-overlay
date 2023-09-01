@@ -1,6 +1,6 @@
 # Maintainer: Xoores <gentoo@xoores.cz>
 
-EAPI=7
+EAPI=6
 
 inherit eutils
 
