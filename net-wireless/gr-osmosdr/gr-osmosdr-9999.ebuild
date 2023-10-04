@@ -1,37 +1,41 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-PYTHON_COMPAT=( python3_{7,8,9,10} )
+PYTHON_COMPAT=( python3_{9..11} )
 
 inherit cmake python-single-r1
 
 DESCRIPTION="GNU Radio source block for OsmoSDR and rtlsdr and hackrf"
-HOMEPAGE="http://sdr.osmocom.org/trac/wiki/GrOsmoSDR"
+HOMEPAGE="
+	https://sdr.osmocom.org/trac/wiki/GrOsmoSDR
+	https://gitea.osmocom.org/sdr/gr-osmosdr
+"
 
 if [[ ${PV} == 9999* ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/osmocom/gr-osmosdr.git"
 else
-	SRC_URI="https://github.com/osmocom/gr-osmosdr/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+	#commit
+	COMMIT="a100eb024c0210b95e4738b6efd836d48225bd03"
+	SRC_URI="https://github.com/osmocom/gr-osmosdr/archive/${COMMIT}.tar.gz -> ${P}.tar.gz"
+	S="${WORKDIR}/${PN}-${COMMIT}"
+	#release
+	#SRC_URI="https://github.com/osmocom/gr-osmosdr/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm ~riscv ~x86"
-	
-	PATCHES=(
-		"${FILESDIR}/${P}-use_xtrx_open_string.patch"
-	)
 fi
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"
-IUSE="airspy bladerf hackrf iqbalance python rtlsdr sdrplay soapy uhd xtrx"
+IUSE="airspy bladerf doc hackrf iqbalance python rtlsdr sdrplay soapy uhd xtrx"
 
 RDEPEND="${PYTHON_DEPS}
 	dev-libs/boost:=
 	dev-libs/log4cpp
-	>=net-wireless/gnuradio-3.8.0.0:0=[${PYTHON_SINGLE_USEDEP}]
+	net-wireless/gnuradio:0=[${PYTHON_SINGLE_USEDEP}]
 	sci-libs/volk:=
 	airspy? ( net-wireless/airspy )
-	bladerf? ( >=net-wireless/bladerf-2018.08_rc1:= )
+	bladerf? ( >=net-wireless/bladerf-2018.08_rc1 )
 	hackrf? ( net-libs/libhackrf:= )
 	iqbalance? ( net-wireless/gr-iqbal:=[${PYTHON_SINGLE_USEDEP}] )
 	rtlsdr? ( >=net-wireless/rtl-sdr-0.5.4:= )
@@ -40,12 +44,18 @@ RDEPEND="${PYTHON_DEPS}
 	uhd? ( net-wireless/uhd:=[${PYTHON_SINGLE_USEDEP}] )
 	xtrx? ( net-wireless/libxtrx )
 	"
-DEPEND="${RDEPEND}
-	dev-lang/swig
+DEPEND="${RDEPEND}"
+
+BDEPEND="
+		$(python_gen_cond_dep 'dev-python/pybind11[${PYTHON_USEDEP}]')
+		doc? ( app-doc/doxygen )
 	"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
+PATCHES=(
+	"${FILESDIR}/${PN}-0.2.3_p20210128-fix-enable-python.patch"
+)
 
 src_configure() {
 	local mycmakeargs=(
@@ -64,6 +74,7 @@ src_configure() {
 		-DENABLE_SOAPY="$(usex soapy ON OFF)"
 		-DENABLE_UHD="$(usex uhd ON OFF)"
 		-DENABLE_XTRX="$(usex xtrx ON OFF)"
+		-DENABLE_DOXYGEN="$(usex doc ON OFF)"
 	)
 
 	cmake_src_configure
@@ -72,6 +83,7 @@ src_configure() {
 src_install() {
 	cmake_src_install
 	if use python; then
+		find "${ED}" -name '*.py[oc]' -delete || die
 		python_fix_shebang "${ED}"/usr/bin
 		python_optimize
 	fi

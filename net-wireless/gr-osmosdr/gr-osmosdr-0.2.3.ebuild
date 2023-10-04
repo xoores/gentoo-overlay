@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-PYTHON_COMPAT=( python3_{7,8,9,10} )
+PYTHON_COMPAT=( python3_{10..11} )
 
 inherit cmake python-single-r1
 
@@ -15,7 +15,7 @@ if [[ ${PV} == 9999* ]]; then
 else
 	SRC_URI="https://github.com/osmocom/gr-osmosdr/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="~amd64 ~arm ~riscv ~x86"
-	
+
 	PATCHES=(
 		"${FILESDIR}/${P}-use_xtrx_open_string.patch"
 	)

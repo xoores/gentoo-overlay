@@ -1,0 +1,27 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 0e32aae..1892fc9 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -7,6 +7,10 @@ else()
+     set(CMAKE_INSTALL_PREFIX "/usr")
+ endif()
+ 
++if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++    INCLUDE(GNUInstallDirs)
++endif()
++
+ # Compatibility Options
+ option(OPT_OVERRIDE_STD_FILESYSTEM "Use a local version of std::filesystem on systems that don't have it yet" OFF)
+ 
+diff --git a/core/CMakeLists.txt b/core/CMakeLists.txt
+index ebe3c60..c6799f5 100644
+--- a/core/CMakeLists.txt
++++ b/core/CMakeLists.txt
+@@ -117,4 +117,4 @@ set(CORE_FILES ${RUNTIME_OUTPUT_DIRECTORY} PARENT_SCOPE)
+ # cmake .. "-DCMAKE_TOOLCHAIN_FILE=C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake"
+ 
+ # Install directives
+-install(TARGETS sdrpp_core DESTINATION lib)
+\ No newline at end of file
++install(TARGETS sdrpp_core DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR})
+\ No newline at end of file
