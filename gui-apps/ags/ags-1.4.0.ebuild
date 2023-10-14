@@ -8,12 +8,14 @@ inherit meson toolchain-funcs
 DESCRIPTION="A customizable and extensible shell"
 HOMEPAGE="https://github.com/Aylur/ags"
 
-SRC_URI="https://github.com/Aylur/${PN}/releases/download/v${PV}/${PN}-v${PV}.tar.gz -> ${P}.tar.gz"
-
+SRC_URI="
+	https://github.com/Aylur/${PN}/releases/download/v${PV}/${PN}-v${PV}.tar.gz -> ${P}.tar.gz
+	https://github.com/Aylur/${PN}/releases/download/v${PV}/node_modules-v${PV}.tar.gz -> ${P}-modules.tar.gz
+	"
 KEYWORDS="~amd64"
-LICENSE="BSD"
+LICENSE="GPL-3.0"
 SLOT="0"
-
+RESTRICT="mirror"
 
 DEPEND="
 	dev-util/cmake
@@ -37,21 +39,16 @@ BUILD_DIR="${S}/build"
 
 src_prepare() {
 	default
-	
-	# This patch moves the libdir from global /usr/lib64 to the application
-	# directory as it compiles libgnome-volume-control as libgvc.so which
-	# in turn conflicts with Graphviz... This may be an ugly hack, but it
-	# is the easiest fix at the moment.
-	sed -i -e '15i libdir = pkgdatadir' \
-		-e '15i extensiondir = join_paths(libdir, meson.project_name())' \
-		-e 's|^libdir|#libdir|g' \
-		-e 's|^extensiondir|#extensiondir|g' \
-		meson.build
+	mv ../node_modules .
+}
+
+src_configure() {
+	meson_src_configure --libdir "lib/$PN"
 }
 
 src_install() {
 	meson_src_install
-	
+
 	# Copy packaged NodeJS modules to the app dir
 	insinto "/usr/share/com.github.Aylur.ags/"
 	doins -r "node_modules"
