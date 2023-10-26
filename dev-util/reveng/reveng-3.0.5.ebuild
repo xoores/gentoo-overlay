@@ -15,7 +15,7 @@ KEYWORDS="alpha amd64 arm arm64 hppa ia64 ppc ppc64 sparc x86"
 IUSE="+man"
 
 DEPEND="
-	man? ( || ( app-text/pandoc app-text/pandoc-bin ) )
+	man? ( || ( app-text/pandoc app-text/pandoc-bin dev-haskell/pandoc ) )
 	"
 RDEPEND="${DEPEND}"
 
