@@ -21,10 +21,10 @@ RESTRICT="mirror"
 
 DEPEND="
 	sys-devel/gcc
-	sys-devel/make
+	dev-build/make
 	sys-libs/glibc
-	sys-devel/autoconf
-	sys-devel/automake
+	dev-build/autoconf
+	dev-build/automake
 	sys-devel/binutils
 	virtual/libc
 	x11-libs/libX11
@@ -40,7 +40,7 @@ DEPEND="
 	mpv? ( media-video/mpv )
 	xscreensaver? ( x11-misc/xscreensaver )
 	"
-	
+
 RDEPEND="${DEPEND}"
 
 

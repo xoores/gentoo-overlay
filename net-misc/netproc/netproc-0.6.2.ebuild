@@ -18,18 +18,18 @@ RESTRICT="mirror"
 
 DEPEND="
 	sys-devel/gcc
-	dev-util/cmake
+	dev-build/cmake
 	sys-libs/glibc
 	sys-libs/ncurses
 	"
-	
+
 RDEPEND="${DEPEND}"
 
 
 src_install()
 {
 	exeinto "/usr/sbin"
-	
+
 	doman "doc/${PN}.8"
 	dosbin "bin/${PN}"
 }

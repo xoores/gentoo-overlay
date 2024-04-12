@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="sys-devel/gdb
+DEPEND="dev-debug/gdb
 		dev-util/scanmem
 		dev-libs/distorm3
 		dev-python/PyQt6
