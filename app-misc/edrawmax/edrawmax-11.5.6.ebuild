@@ -7,9 +7,9 @@
 # Maintainer: Xoores <gentoo@xoores.cz>
 
 
-EAPI="6"
+EAPI=8
 
-inherit eapi7-ver rpm xdg-utils
+inherit rpm xdg-utils
 
 #MY_PV=$(ver_rs 1-2 '-')
 

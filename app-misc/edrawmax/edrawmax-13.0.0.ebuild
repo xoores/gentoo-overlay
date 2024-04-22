@@ -7,13 +7,13 @@
 # Maintainer: Xoores <gentoo@xoores.cz>
 
 
-EAPI="6"
+EAPI=8
 
-inherit eapi7-ver rpm xdg-utils
+inherit rpm xdg-utils
 
-MY_PV=$(ver_rs 1-2 '-')
+#MY_PV=$(ver_rs 1-2 '-')
 
-SRC_URI="https://download.edrawsoft.com/archives/edrawmax-${MY_PV}-en.rpm  -> ${P}.rpm"
+SRC_URI="https://download.edrawsoft.com/archives/edrawmax_en_full5371.rpm  -> ${P}.rpm"
 DESCRIPTION="All-in-one Diagramming Tool, nice alternative to Microsoft Visio"
 HOMEPAGE="https://www.edrawsoft.com/"
 
@@ -85,29 +85,20 @@ src_install() {
 	# Since I'm lazy & don't wanna edit PATH
 	dosym /opt/${PN}/EdrawMax /usr/bin/edrawmax
 	
-	insinto  /usr/share/mime/packages/
-	doins "${FILESDIR}"/${PN}.xml
 	
-	insinto  /usr/share/applications/
-	doins usr/share/applications/edrawmax.desktop
+	insinto /
 	
-	# Prepare all icon sizes, original is 48x48
-	local s SIZES=(16 22 24 32 36 48 64 72 96 128 192 256)
-	for s in "${SIZES[@]}"; do
-		convert "${S}/opt/${EDRAW_OPTDIR}/${PN}.png" -resize ${s}x${s} "${WORKDIR}/${PN}_${s}.png"
-		newicon --size ${s} --context mimetypes  "${WORKDIR}/${PN}_${s}.png"  application-x-eddx.png
-	done
-
+	doins -r usr/
 }
 
 
-src_postinst() {
+pkg_postinst() {
 	xdg_desktop_database_update
 	xdg_mimeinfo_database_update
 	xdg_icon_cache_update
 }
 
-src_postrm() {
+pkg_postrm() {
 	xdg_desktop_database_update
 	xdg_mimeinfo_database_update
 	xdg_icon_cache_update
