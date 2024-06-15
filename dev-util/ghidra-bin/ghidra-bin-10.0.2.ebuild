@@ -11,8 +11,6 @@ GHIDRA_DATESTAMP="20210804"
 GHIDRA_DESTDIR="/opt/ghidra-${PV}"
 
 
-inherit eutils
-
 DESCRIPTION="A software reverse engineering (SRE) suite of tools developed by NSA"
 HOMEPAGE="https://ghidra-sre.org/"
 SRC_URI="https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_${PV}_build/ghidra_${PV}_PUBLIC_${GHIDRA_DATESTAMP}.zip -> ${P}.zip"

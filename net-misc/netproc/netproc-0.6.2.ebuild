@@ -1,8 +1,6 @@
 # Maintainer: Xoores <gentoo@xoores.cz>
 
-EAPI=6
-
-inherit eutils
+EAPI=8
 
 DESCRIPTION="Tool to monitor network traffic based on processes"
 HOMEPAGE="https://github.com/berghetti/netproc"

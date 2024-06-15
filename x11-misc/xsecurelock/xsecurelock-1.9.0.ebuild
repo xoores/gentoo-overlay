@@ -2,7 +2,7 @@
 
 EAPI=6
 
-inherit eutils autotools
+inherit autotools
 
 DESCRIPTION="X11 screen lock utility with security in mind"
 HOMEPAGE="https://github.com/google/xsecurelock"

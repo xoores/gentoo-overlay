@@ -4,8 +4,6 @@
 
 EAPI=6
 
-inherit eutils
-
 DESCRIPTION="Lightworks is the fastest, most accessible and focused NLE in the industry"
 HOMEPAGE="http://www.lwks.com/"
 SRC_URI="https://cdn.lwks.com/releases/2022.2/lightworks_2022.2_r135077.deb"

@@ -2,9 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
-
-inherit eutils
+EAPI=8
 
 DESCRIPTION="A GUI for the Chameleon Ultra/Chameleon Lite written in Flutter for cross platform operation"
 HOMEPAGE="https://chameleonultragui.dev"
