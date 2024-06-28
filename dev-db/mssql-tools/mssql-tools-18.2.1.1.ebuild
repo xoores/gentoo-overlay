@@ -22,14 +22,16 @@ RDEPEND="
 S="${WORKDIR}"
 
 QA_PREBUILT="
-	usr/bin/bcp
+	usr/bin/sqlbcp
 	usr/bin/sqlcmd
 "
 
 src_install() {
-	dobin "opt/mssql-tools${PV%%.*}/bin/sqlcmd"
+	# bcp is unfortunately a boost binary, so let's rename MSSQL bcp to
+	# something that will work...
+	mv "opt/mssql-tools${PV%%.*}/bin/bcp" "opt/mssql-tools${PV%%.*}/bin/sqlbcp"
 	
-	#dobin "opt/mssql-tools${PV%%.*}/bin/bcp"
+	dobin "opt/mssql-tools${PV%%.*}/bin/sql"{cmd,bcp}
 
 	insinto /usr/share/resources/en_US
 	doins "opt/mssql-tools${PV%%.*}/share/resources/en_US/BatchParserGrammar."{dfa,llr} \
@@ -37,4 +39,11 @@ src_install() {
 		"opt/mssql-tools${PV%%.*}/share/resources/en_US/SQLCMD.rll"
 
 	pax-mark m "${ED}"/usr/bin/{bcp,sqlcmd}
+}
+
+
+pkg_postinst() {
+	elog "${PN} package contains 'bcp' binary, but this name unfortunately collides"
+	elog "with another binary from dev-libs/boost... To resolve this issue I just renamed"
+	elog "binary from this package to sqlbcp"
 }
