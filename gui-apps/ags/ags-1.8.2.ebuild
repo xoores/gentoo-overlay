@@ -9,8 +9,8 @@ DESCRIPTION="A customizable and extensible shell"
 HOMEPAGE="https://github.com/Aylur/ags"
 
 SRC_URI="
-	https://github.com/kotontrion/${PN}/releases/download/v${PV}/${PN}-v${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/kotontrion/${PN}/releases/download/v${PV}/node_modules-v${PV}.tar.gz -> ${P}-modules.tar.gz
+	https://github.com/Aylur/${PN}/releases/download/v${PV}/${PN}-v${PV}.tar.gz -> ${P}.tar.gz
+	https://github.com/Aylur/${PN}/releases/download/v${PV}/node_modules-v${PV}.tar.gz -> ${P}-modules.tar.gz
 	"
 KEYWORDS="~amd64"
 LICENSE="GPL-3.0"
@@ -18,9 +18,9 @@ SLOT="0"
 RESTRICT="mirror"
 
 DEPEND="
-	dev-util/cmake
+	dev-build/cmake
 	dev-lang/typescript
-	dev-util/meson
+	dev-build/meson
 	dev-libs/gjs
 	net-wireless/gnome-bluetooth
 	gui-libs/gtk-layer-shell

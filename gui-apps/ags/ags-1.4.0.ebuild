@@ -18,9 +18,9 @@ SLOT="0"
 RESTRICT="mirror"
 
 DEPEND="
-	dev-util/cmake
+	dev-build/cmake
 	dev-lang/typescript
-	dev-util/meson
+	dev-build/meson
 	dev-libs/gjs
 	net-wireless/gnome-bluetooth
 	gui-libs/gtk-layer-shell

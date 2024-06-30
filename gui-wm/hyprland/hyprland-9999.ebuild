@@ -27,66 +27,50 @@ LICENSE="BSD"
 SLOT="0"
 IUSE="X legacy-renderer systemd video_cards_nvidia"
 
-# bundled wlroots has the following dependency string according to included headers.
-# wlroots[drm,gles2-renderer,libinput,x11-backend?,X?]
-# enable x11-backend with X and vice versa
-WLROOTS_RDEPEND="
-	>=dev-libs/libinput-1.14.0:=
-	dev-libs/libliftoff
-	>=dev-libs/wayland-1.22
-	media-libs/libdisplay-info
-	media-libs/libglvnd
-	media-libs/mesa[egl(+),gles2]
-	sys-apps/hwdata:=
-	sys-auth/seatd:=
-	>=x11-libs/libdrm-2.4.114
-	x11-libs/libxkbcommon
-	>=x11-libs/pixman-0.42.0
-	virtual/libudev:=
-	X? (
-		x11-base/xwayland
-		x11-libs/libxcb:0=
-		x11-libs/xcb-util-renderutil
-		x11-libs/xcb-util-wm
-	)
-"
-WLROOTS_DEPEND="
-	>=dev-libs/wayland-protocols-1.32
-"
-WLROOTS_BDEPEND="
-	dev-util/glslang
-	dev-util/wayland-scanner
-"
 
 RDEPEND="
-	${WLROOTS_RDEPEND}
+	=gui-libs/hyprutils-9999
+	gui-libs/hyprcursor
+	app-misc/jq
 	dev-libs/glib:2
-	dev-libs/libinput
+	dev-libs/libinput:=
+	dev-libs/libliftoff
 	dev-libs/wayland
-	media-libs/libglvnd
+	dev-libs/wayland-protocols
+	dev-util/glslang
+	dev-util/vulkan-headers
+	gui-libs/gtk-layer-shell
+	media-libs/libdisplay-info
+	media-libs/libglvnd[X?]
+	media-libs/mesa[gles2,wayland,X?]
+	media-libs/vulkan-loader
+	sys-auth/seatd:=
+	x11-base/xcb-proto
 	x11-libs/cairo
 	x11-libs/libdrm
 	x11-libs/libxkbcommon
 	x11-libs/pango
 	x11-libs/pixman
+	x11-misc/xkeyboard-config
+	virtual/libudev:=
 	X? (
-		x11-libs/libxcb:0=
+	   gui-libs/wlroots[x11-backend]
+	   x11-base/xwayland
+	   x11-libs/libxcb:=
+	   x11-libs/xcb-util-image
+	   x11-libs/xcb-util-renderutil
+	   x11-libs/xcb-util-wm
 	)
 "
-DEPEND="
-	${RDEPEND}
-	${WLROOTS_DEPEND}
-	dev-libs/hyprland-protocols
-	>=dev-libs/wayland-protocols-1.25
-"
+DEPEND="${RDEPEND}"
 BDEPEND="
-	${WLROOTS_BDEPEND}
-	app-misc/jq
-	dev-util/cmake
-	dev-util/wayland-scanner
+	=dev-libs/hyprland-protocols-9999
+	>=dev-libs/wayland-1.22.0
+	dev-util/hyprwayland-scanner
 	dev-vcs/git
-	virtual/pkgconfig
+	>=gui-libs/wlroots-0.16.0[X?]
 "
+
 
 pkg_setup() {
 	[[ ${MERGE_TYPE} == binary ]] && return
@@ -105,16 +89,18 @@ pkg_setup() {
 
 src_prepare() {
 	if use video_cards_nvidia; then
-		cd "${S}/subprojects/wlroots" || die
-		eapply "${S}/nix/patches/wlroots-nvidia.patch"
+		cd "${S}/subprojects/wlroots-hyprland" || die
+		
+		for PATCH in $(find patches/ -type f -name '*.patch'); do
+			eapply "${PATCH}"
+		done
+		
 		# https://bugs.gentoo.org/911597
 		# https://github.com/hyprwm/Hyprland/pull/2874
 		# https://github.com/hyprwm/Hyprland/blob/main/nix/wlroots.nix#L54
 		sed -i -e 's/glFlush();/glFinish();/' render/gles2/renderer.c || die
 		cd "${S}" || die
 	fi
-
-	#eapply "${FILESDIR}/hyprland-0.28.0-no-wlroots-automagic-r1.patch"
 
 	default
 }
