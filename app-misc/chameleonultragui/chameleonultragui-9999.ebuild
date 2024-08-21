@@ -4,9 +4,12 @@
 
 EAPI=8
 
+inherit wrapper desktop
+
 DESCRIPTION="A GUI for the Chameleon Ultra/Chameleon Lite written in Flutter for cross platform operation"
 HOMEPAGE="https://chameleonultragui.dev"
-SRC_URI="https://nightly.link/GameTec-live/ChameleonUltraGUI/workflows/build-app/main/linux-debian.zip"
+SRC_URI="https://nightly.link/GameTec-live/ChameleonUltraGUI/workflows/build-app/main/linux-debian.zip -> ${P}.zip"
+
 
 LICENSE="GPL-3.0"
 SLOT="0"
@@ -30,6 +33,7 @@ src_prepare() {
 
 	# Patch /usr/local -> /usr
 	sed -i 's|/usr/local/lib/|/usr/lib/|g' usr/share/applications/chameleonultragui.desktop
+	sed -i '/Version=/d' usr/share/applications/chameleonultragui.desktop
 }
 
 

@@ -22,7 +22,7 @@ fi
 
 
 
-KEYWORDS="~amd64"
+KEYWORDS="**"
 LICENSE="BSD"
 SLOT="0"
 IUSE="X legacy-renderer systemd video_cards_nvidia"
@@ -87,23 +87,23 @@ pkg_setup() {
 	fi
 }
 
-src_prepare() {
-	if use video_cards_nvidia; then
-		cd "${S}/subprojects/wlroots-hyprland" || die
+#~ src_prepare() {
+	#~ if use video_cards_nvidia; then
+		#~ cd "${S}/subprojects/wlroots-hyprland" || die
 		
-		for PATCH in $(find patches/ -type f -name '*.patch'); do
-			eapply "${PATCH}"
-		done
+		#~ for PATCH in $(find patches/ -type f -name '*.patch'); do
+			#~ eapply "${PATCH}"
+		#~ done
 		
-		# https://bugs.gentoo.org/911597
-		# https://github.com/hyprwm/Hyprland/pull/2874
-		# https://github.com/hyprwm/Hyprland/blob/main/nix/wlroots.nix#L54
-		sed -i -e 's/glFlush();/glFinish();/' render/gles2/renderer.c || die
-		cd "${S}" || die
-	fi
+		#~ # https://bugs.gentoo.org/911597
+		#~ # https://github.com/hyprwm/Hyprland/pull/2874
+		#~ # https://github.com/hyprwm/Hyprland/blob/main/nix/wlroots.nix#L54
+		#~ sed -i -e 's/glFlush();/glFinish();/' render/gles2/renderer.c || die
+		#~ cd "${S}" || die
+	#~ fi
 
-	default
-}
+	#~ default
+#~ }
 
 src_configure() {
 	local emesonargs=(

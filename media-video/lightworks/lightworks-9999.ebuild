@@ -2,17 +2,21 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=6
+EAPI=8
+
+inherit wrapper desktop
 
 DESCRIPTION="Lightworks is the fastest, most accessible and focused NLE in the industry"
 HOMEPAGE="http://www.lwks.com/"
-SRC_URI="https://cdn.lwks.com/releases/2022.2/lightworks_2022.2_r135077.deb"
+SRC_URI="https://25893642.fs1.hubspotusercontent-eu1.net/hubfs/25893642/Lightworks%20Latest%20Version/lightworks_linux_deb.deb -> ${P}.deb"
 
 LICENSE="EditShare"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="**"
 RESTRICT=""
 IUSE=""
+
+QA_PREBUILT="usr/lib64/${PN}/*"
 
 RDEPEND="
 	dev-libs/openssl
@@ -38,6 +42,7 @@ RDEPEND="
 	media-libs/glu
 	media-libs/mesa
 	media-libs/portaudio[jack] 
+	media-sound/sndio
 	>=media-gfx/nvidia-cg-toolkit-3.1.0013-r2
 	x11-libs/libxcb
 	x11-libs/libXinerama
@@ -86,9 +91,6 @@ src_install() {
 
 	exeinto /usr/lib64/${PN}
 	doexe usr/lib/${PN}/ntcardvt || die "doins lib-exe failed"
-
-	fperms a+rw "usr/share/lightworks/Preferences"
-	fperms a+rw "usr/share/lightworks/Audio Mixes"
 
 	insinto /usr/share/${PN}
 	doins -r usr/share/${PN}/* || die "doins share failed"

@@ -9,6 +9,8 @@ DESCRIPTION="All-in-one terminal, sniffer and protocol analyzer"
 HOMEPAGE="https://ioninja.com/"
 RESTRICT="bindist mirror"
 
+# https://tibbo.com/downloads/archive/ioninja/.internal/prerelease/ioninja-5.3.1-c-linux-amd64.tar.xz
+SRC_URI="https://tibbo.com/downloads/archive/${PN}/.internal/prerelease/${PN}-${PV}-linux-${ABI}.tar.xz -> ${P}.tar.xz"
 SRC_URI="https://tibbo.com/downloads/archive/${PN}/${P}/${P}-linux-${ABI}.tar.xz -> ${P}.tar.xz"
 
 KEYWORDS="amd64 ~arm"
@@ -31,7 +33,7 @@ src_install() {
 	doins -r "etc"
 	
 	# Cannot put stuff in /usr/ *yet* - will be fixed soon
-	#insinto "/usr/"
+	insinto "/"
 	doins -r "share"
 	
 	for F in bin/*; do
