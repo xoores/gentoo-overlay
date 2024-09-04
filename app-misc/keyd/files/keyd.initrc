@@ -1,0 +1,6 @@
+#!/sbin/openrc-run
+
+command="/usr/bin/keyd"
+command_background="yes"
+description="Remapping daemon keyd"
+command_user="root:keyd"
