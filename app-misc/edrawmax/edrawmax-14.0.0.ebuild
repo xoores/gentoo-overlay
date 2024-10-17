@@ -12,8 +12,9 @@ EAPI=8
 inherit rpm xdg-utils
 
 #MY_PV=$(ver_rs 1-2 '-')
-
-SRC_URI="https://download.edrawsoft.com/archives/edrawmax_en_full5371.rpm  -> ${P}.rpm"
+         
+#~ SRC_URI="https://download.edrawsoft.com/archives/edrawmax_en_full5371.rpm -> ${P}.rpm"
+SRC_URI="https://download.wondershare.com/prd/edrawmax_full5371.rpm -> ${P}.rpm"
 DESCRIPTION="All-in-one Diagramming Tool, nice alternative to Microsoft Visio"
 HOMEPAGE="https://www.edrawsoft.com/"
 
@@ -38,6 +39,7 @@ RDEPEND="
 
 S="${WORKDIR}/"
 EDRAW_OPTDIR="EdrawMax-$(ver_cut 1)"
+EDRAW_OPTDIR="EdrawMax-13"
 
 
 src_unpack() {
@@ -53,18 +55,18 @@ src_prepare()
 	# Also BE WARNED: I did not test neither of these as I don't need
 	# that functionality but feel free to test & do a pull request :)
 	if ! use mysql; then
-		rm "opt/${EDRAW_OPTDIR}/plugins/sqldrivers/libqsqlmysql.so"
+		rm "opt/apps/edrawmax/lib/sqldrivers/libqsqlmysql.so"
 	fi
 	
-	if ! use postgres; then
-		rm "opt/${EDRAW_OPTDIR}/plugins/sqldrivers/libqsqlpsql.so"
-	fi
+	#~ if ! use postgres; then
+		#~ rm "opt/${EDRAW_OPTDIR}/plugins/sqldrivers/libqsqlpsql.so"
+	#~ fi
 	
 	
-	# TODO: try to find out missing dependencies:
-    #         - libQt53DQuick.so.5
-    #		  - llibQt53DQuickScene2D.so.5
-	rm "opt/${EDRAW_OPTDIR}/plugins/renderplugins/libscene2d.so"
+	#~ # TODO: try to find out missing dependencies:
+    #~ #         - libQt53DQuick.so.5
+    #~ #		  - llibQt53DQuickScene2D.so.5
+	#~ rm "opt/${EDRAW_OPTDIR}/plugins/renderplugins/libscene2d.so"
 		
 	# Remove CRs from Edrawmaxes desktop file...
 	sed -i \
@@ -77,7 +79,8 @@ src_prepare()
 src_install() {
 	insinto /opt/${PN}
 	
-	doins -r opt/${EDRAW_OPTDIR}/*
+	#~ doins -r opt/${EDRAW_OPTDIR}/*
+	doins -r opt/apps/edrawmax/*
 
 	fperms 755 /opt/${PN}/EdrawMax
 	fperms -R 755 /opt/${PN}/lib

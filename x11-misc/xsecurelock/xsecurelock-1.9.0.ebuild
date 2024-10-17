@@ -1,6 +1,6 @@
 # Maintainer: Xoores <gentoo@xoores.cz>
 
-EAPI=6
+EAPI=8
 
 inherit autotools
 
