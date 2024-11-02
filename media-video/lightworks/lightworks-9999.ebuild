@@ -9,11 +9,10 @@ inherit wrapper desktop
 DESCRIPTION="Lightworks is the fastest, most accessible and focused NLE in the industry"
 HOMEPAGE="http://www.lwks.com/"
 SRC_URI="https://25893642.fs1.hubspotusercontent-eu1.net/hubfs/25893642/Lightworks%20Latest%20Version/lightworks_linux_deb.deb -> ${P}.deb"
-
 LICENSE="EditShare"
 SLOT="0"
 KEYWORDS="**"
-RESTRICT=""
+RESTRICT="mirror test"
 IUSE=""
 
 QA_PREBUILT="usr/lib64/${PN}/*"
