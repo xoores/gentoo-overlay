@@ -99,16 +99,17 @@ src_install() {
 		rm -r "${JRE_DIR}" || die
 	fi
 
-	fperms 755 "${DIR}"/bin/{format.sh,inspect.sh,ltedit.sh,pycharm.sh,printenv.py,restart.py}
+	fperms 755 "${DIR}"/bin/{format.sh,inspect.sh,jetbrains_client.sh,ltedit.sh,pycharm,pycharm.sh,remote-dev-server,remote-dev-server.sh,repair,restarter}
 
-	fperms 755 "${DIR}"/"${JRE_DIR}"/bin/{jaotc,java,javac,jcmd,jdb,jfr,jhsdb,jjs,jmap,jps,jrunscript,jstack,jstat,keytool,pack200,rmid,rmiregistry,serialver,unpack200}
-	fperms 755 "${DIR}"/"${JRE_DIR}"/lib/{chrome-sandbox,jcef_helper,jexec,jspawnhelper}
+	fperms 755 "${DIR}/${JRE_DIR}"/bin/*
+	fperms 755 "${DIR}/${JRE_DIR}"/lib/{chrome-sandbox,jcef_helper,jexec,jspawnhelper}
 
-	make_wrapper "${PN}" "${DIR}/bin/pycharm.sh"
+	dosym "${EPREFIX}${DIR}/bin/${PN//-professional/}" "/usr/bin/${PN}"
 	newicon bin/${MY_PN}.png ${PN}.png
 	make_desktop_entry ${PN} ${PN} ${PN}
 
 	readme.gentoo_create_doc
+	
 
 	# recommended by: https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit
 	dodir /etc/sysctl.d/
