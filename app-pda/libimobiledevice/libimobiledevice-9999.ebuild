@@ -26,6 +26,7 @@ RDEPEND="
 	>=app-pda/libplist-2.3.0:=
 	>=app-pda/libusbmuxd-2.0.2:=
 	>=app-pda/libimobiledevice-glue-1.0.0
+	app-pda/libtatsu
 	gnutls? (
 		dev-libs/libgcrypt:0
 		>=dev-libs/libtasn1-1.1
