@@ -304,7 +304,7 @@ DEPEND="
 		x11-libs/cairo
 		x11-libs/gdk-pixbuf:2
 		dev-libs/glib:2
-		virtual/rust
+		|| ( dev-lang/rust dev-lang/rust-bin )
 		"
 RDEPEND="${DEPEND}"
 BDEPEND=""
