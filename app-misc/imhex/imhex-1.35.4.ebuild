@@ -5,7 +5,6 @@ EAPI=8
 
 CMAKE_BUILD_TYPE="Release"
 CMAKE_MAKEFILE_GENERATOR="emake"
-LLVM_MAX_SLOT=17
 RESTRICT="bindist mirror"
 
 inherit cmake llvm toolchain-funcs
@@ -46,7 +45,7 @@ BDEPEND="
 	>=sys-devel/gcc-12.0
 	app-admin/chrpath
 	gnome-base/librsvg
-	sys-devel/lld
+	llvm-core/lld
 	dev-util/ccache
 "
 
