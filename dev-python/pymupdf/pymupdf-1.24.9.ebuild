@@ -10,7 +10,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=(python3_{10..12})
+PYTHON_COMPAT=(python3_{10..13})
 
 inherit distutils-r1
 
@@ -30,7 +30,7 @@ RDEPEND="
 	=app-text/mupdf-${PV}
 	dev-lang/swig
 	tesseract? ( dev-python/pytesseract[${PYTHON_USEDEP}] )
-	dev-python/clang-python[${PYTHON_USEDEP}]
+	dev-python/clang[${PYTHON_USEDEP}]
 	dev-python/setuptools[${PYTHON_USEDEP}]
 	${PYTHON_DEPS}
 "

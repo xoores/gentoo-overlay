@@ -1,0 +1,26 @@
+diff --color -urN a/cmake/TulipPython.cmake b/cmake/TulipPython.cmake
+--- a/cmake/TulipPython.cmake	2025-01-06 21:51:58.129091984 +0100
++++ b/cmake/TulipPython.cmake	2025-01-06 22:17:20.905847932 +0100
+@@ -142,10 +142,21 @@
+     COMMAND ${SIP_MODULE_PROG} --sdist --target-dir=${SIP_INCLUDE_DIR} ${SIP_MODULE}
+     COMMAND_ERROR_IS_FATAL ANY)
+ FILE(GLOB SIP_DIST LIST_DIRECTORIES false CONFIGURE_DEPENDS ${SIP_INCLUDE_DIR}/${SIP_MODULE_}-*.tar.gz)
+-STRING(REGEX MATCH "[0-9]+\.[0-9]+\.[0-9]+" SIP_API_FULL ${SIP_DIST})
++
++# Had to change this a little bit because it matches on the *first* occurance of the regex. Which is kinda not good when we
++# have buildpath on Gentoo that looks like '/var/tmp/portage/sci-libs/tulip-6.0.0/work/tulip-6.0.0'... So I match on the
++# *archive* name specifically & strip it out in the next step. Probably there is some cmake flags or cleaner way to do this
++# but I'm no cmake expert, so REPLACE it is ;)
++#                                               - Xoores
++STRING(REGEX MATCH "[0-9]+\.[0-9]+\.[0-9]+.tar.gz" SIP_API_FULL_GZ ${SIP_DIST})
++STRING(REPLACE ".tar.gz" "" SIP_API_FULL ${SIP_API_FULL_GZ})
++
+ STRING(REGEX MATCH "^[0-9]+\.[0-9]+" SIP_API ${SIP_API_FULL}) #used in pyproject.toml files
++
+ FILE(ARCHIVE_EXTRACT INPUT ${SIP_DIST} DESTINATION ${SIP_INCLUDE_DIR} PATTERNS *.c *.h)
+ SET (SIP_H_DIR ${SIP_INCLUDE_DIR}/${SIP_MODULE_}-${SIP_API_FULL})
++
++
+ #######################
+ #compile the sip module on our own instead of pip (produce faulty binaries on Windows and module is not compiled with gcc)
+ SET(SIP_PYTHON_MODULE_SRC
