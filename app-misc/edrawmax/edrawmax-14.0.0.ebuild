@@ -12,7 +12,7 @@ EAPI=8
 inherit rpm xdg-utils
 
 #MY_PV=$(ver_rs 1-2 '-')
-         
+
 #~ SRC_URI="https://download.edrawsoft.com/archives/edrawmax_en_full5371.rpm -> ${P}.rpm"
 SRC_URI="https://download.wondershare.com/prd/edrawmax_full5371.rpm -> ${P}.rpm"
 DESCRIPTION="All-in-one Diagramming Tool, nice alternative to Microsoft Visio"
@@ -27,11 +27,71 @@ RESTRICT="mirror"
 IUSE="-mysql -postgres"
 
 RDEPEND="
-	dev-qt/qtsensors:5
-	dev-qt/qtserialport:5
-	dev-qt/designer:5
-	dev-qt/qt3d:5
+	app-accessibility/at-spi2-core
+	app-arch/brotli
+	app-arch/bzip2
+	app-arch/zstd
+	app-crypt/mit-krb5
+	dev-libs/double-conversion
+	dev-libs/expat
+	dev-libs/glib
+	dev-libs/icu
+	dev-libs/libffi
+	dev-libs/libpcre2
+	dev-libs/libunistring
+	dev-libs/nspr
+	dev-libs/nss
+	dev-libs/openssl
+	dev-qt/qtcore:5
+	dev-qt/qtgui:5
+	dev-qt/qtsvg:5
+	dev-qt/qtwidgets:5
+	dev-qt/qtxml:5
 	dev-qt/qtgamepad:5
+	dev-qt/qt3d:5
+	dev-qt/qtsensors:5
+	media-gfx/graphite2
+	media-libs/alsa-lib
+	media-libs/fontconfig
+	media-libs/freetype
+	media-libs/harfbuzz
+	media-libs/libglvnd
+	media-libs/libpng
+	media-libs/mesa
+	media-video/rtmpdump
+	net-dns/avahi
+	net-dns/c-ares
+	net-dns/libidn2
+	net-libs/libpsl
+	net-libs/libssh2
+	net-libs/nghttp2
+	net-libs/nghttp3
+	net-misc/curl
+	net-print/cups
+	sys-apps/dbus
+	sys-apps/keyutils
+	sys-apps/util-linux
+	sys-devel/gcc
+	sys-fs/e2fsprogs
+	sys-libs/glibc
+	sys-libs/zlib
+	x11-libs/cairo
+	x11-libs/libX11
+	x11-libs/libXau
+	x11-libs/libXcomposite
+	x11-libs/libXdamage
+	x11-libs/libXdmcp
+	x11-libs/libXext
+	x11-libs/libXfixes
+	x11-libs/libXi
+	x11-libs/libXrandr
+	x11-libs/libXrender
+	x11-libs/libdrm
+	x11-libs/libxcb
+	x11-libs/libxkbcommon
+	x11-libs/libxshmfence
+	x11-libs/pixman
+
 	mysql? ( dev-db/mysql )
 	postgres? ( dev-db/postgresql )
 "
