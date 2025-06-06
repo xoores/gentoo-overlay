@@ -3,14 +3,14 @@
 
 EAPI=8
 
-MY_FILE_SUFFIX="ubuntu-22.04_PR-6688"
+MY_FILE_SUFFIX="ubuntu-24.04_PR-7080"
 WX_GTK_VER="3.0-gtk3"
 
 inherit desktop wrapper xdg
 
 DESCRIPTION="Bambu Studio is a cutting-edge, feature-rich slicing software (prebuilt package)"
 HOMEPAGE="https://bambulab.com"
-SRC_URI="https://github.com/bambulab/${MY_PN}/releases/download/V${PV}/BambuStudio_${MY_FILE_SUFFIX}.zip -> ${P}.zip"
+SRC_URI="https://github.com/bambulab/BambuStudio/releases/download/v${PV}/Bambu_Studio_${MY_FILE_SUFFIX}.AppImage -> ${P}.AppImage"
 
 LICENSE="AGPL-3"
 SLOT="0"
@@ -38,9 +38,10 @@ QA_PREBUILT="*"
 RESTRICT="strip mirror"
 
 src_unpack() {
-	unzip "${DISTDIR}/${P}.zip" || die "Failed to unpack initial ZIP"
+	#~ unzip "${DISTDIR}/${P}.zip" || die "Failed to unpack initial ZIP"
 	mkdir "${S}" || die
-	mv "Bambu_Studio_${MY_FILE_SUFFIX}.AppImage" "${S}/${P}.AppImage" || die
+	cp "${DISTDIR}/${P}.AppImage" "${S}/${P}.AppImage" || die
+	#~ mv "Bambu_Studio_${MY_FILE_SUFFIX}.AppImage" "${S}/${P}.AppImage" || die
 	pushd "${S}" || die
 	chmod +x "${S}/${P}.AppImage" || die
 	"${S}/${P}.AppImage" --appimage-extract || die
