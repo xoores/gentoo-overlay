@@ -4,7 +4,6 @@
 EAPI=8
 
 MY_FILE_SUFFIX="ubuntu-24.04_PR-7080"
-WX_GTK_VER="3.0-gtk3"
 
 inherit desktop wrapper xdg
 
@@ -28,7 +27,6 @@ RDEPEND="
 	>=x11-libs/cairo-1.8.8:=
 	x11-libs/libxkbcommon
 	>=x11-libs/pixman-0.30
-	x11-libs/wxGTK:${WX_GTK_VER}[X,opengl]
 	sys-libs/zlib
 "
 DEPEND="${RDEPEND}"

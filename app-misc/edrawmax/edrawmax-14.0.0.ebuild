@@ -47,9 +47,6 @@ RDEPEND="
 	dev-qt/qtsvg:5
 	dev-qt/qtwidgets:5
 	dev-qt/qtxml:5
-	dev-qt/qtgamepad:5
-	dev-qt/qt3d:5
-	dev-qt/qtsensors:5
 	media-gfx/graphite2
 	media-libs/alsa-lib
 	media-libs/fontconfig
