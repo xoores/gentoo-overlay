@@ -9,7 +9,9 @@ inherit xdg
 
 DESCRIPTION="Comprehensive database management tool, Enterprise Edition"
 HOMEPAGE="https://dbeaver.com"
-SRC_URI="https://dbeaver.com/files/${PV}/${P}-linux.gtk.x86_64-nojdk.tar.gz"
+#SRC_URI="https://dbeaver.com/files/${PV}/${P}-linux.gtk.x86_64-nojdk.tar.gz"
+SRC_URI="https://dbeaver.com/files/${PN}-latest-linux-x86_64.tar.gz"
+
 LICENSE="EULA"
 SLOT="0"
 KEYWORDS="~amd64"

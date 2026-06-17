@@ -8,7 +8,7 @@ EAPI=8
 #~ DISTUTILS_USE_PEP517=no
 DISTUTILS_USE_PEP517=flit
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{9..14} )
 
 DESCRIPTION="A python script for sending desktop notifications from the shell"
 HOMEPAGE="https://github.com/phuhl/notify-send.py"
