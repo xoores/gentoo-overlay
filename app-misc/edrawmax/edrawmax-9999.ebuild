@@ -23,7 +23,7 @@ HOMEPAGE="https://www.edrawsoft.com/"
 
 LICENSE="EULA"
 SLOT="0"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-*"
 
 RESTRICT="mirror"
 
